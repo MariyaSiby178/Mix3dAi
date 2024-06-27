@@ -81,12 +81,12 @@ button.btn-orange:active {
   min-height: 100vh;
 }
 .list-group-item.active {
-  background-color: white !important; /* Set the background color to white */
+  background-color: white !important; 
   color: #000056 !important;
   font-weight: 600;
 }
 .card-header {
-  background-color: white !important; /* Set the background color to white */
+  background-color: white !important; 
   border-bottom: none !important;
 }
 .page-button {

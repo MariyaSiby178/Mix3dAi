@@ -1,19 +1,13 @@
 $(document).ready(function () {
-  // Event listener for design buttons
   $("#button-design").on("click", ".design-button", function () {
-    // Remove btn-outline from all design buttons
     $(".design-button").removeClass("btn-outline");
 
-    // Add btn-outline class to the clicked button
     $(this).addClass("btn-outline");
 
-    // Get button value
     const buttonValue = $(this).attr("value");
 
-    // Reset text-decoration initially
     $(".take-decision-button").css("text-decoration", "none");
 
-    // Check button value and apply underline if needed
     if (buttonValue === "Plainline" || buttonValue === "Lineicon") {
       $(".take-decision-button").css("text-decoration", "underline");
       $(".take-decision-button").css("border", "none");
@@ -25,7 +19,6 @@ $(document).ready(function () {
       );
     }
 
-    // Apply styles to all "Take Decision" buttons
     $(".take-decision-button").css({
       "background-color": $(this).css("background-color"),
       color: $(this).css("color"),
@@ -35,7 +28,6 @@ $(document).ready(function () {
     });
   });
 
-  // Add new decision
   $("#add-new-decision").on("click", function () {
     const newDecisionHtml = `
       <div class="ms-4 w-100 pay-bg decision-bg d-flex align-items-center mb-3 p-3">
@@ -59,7 +51,6 @@ $(document).ready(function () {
     $("#decisions-container").append(newDecisionHtml);
   });
 
-  // Save decisions
   $("#save-decisions").on("click", function () {
     const decisions = [];
     $("#decisions-container .decision-bg").each(function () {
@@ -82,7 +73,6 @@ $(document).ready(function () {
     });
   });
 
-  // Remove decision
   $("#decisions-container").on("click", ".fa-trash", function () {
     $(this).closest(".decision-bg").remove();
   });
